@@ -1,0 +1,12 @@
+name: GitHub Actions Lab
+run-name: ${{ github.actor }}
+on: [push]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Assign Issue
+      uses: actions-ecosystem/action-assign@v2
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        assignees: X # Replace X with the GitHub username of the team member
