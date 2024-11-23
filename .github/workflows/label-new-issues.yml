@@ -1,0 +1,16 @@
+name: Label New Issues as "To Do"
+run-name: ${{ github.actor }}
+on: [push]
+  issues:
+    type: [opened]
+permissions:
+    issues: write #explicity grant permission to manage issue
+jobs:
+  label_issues:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Label new issues as "To Do"
+        uses: actions-ecosystem/actions-add-labels@v1
+        with:
+            github_token: ${{ secrets.github_token}}
+            labels: "To Do"
